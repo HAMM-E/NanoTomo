@@ -43,10 +43,25 @@ public class GameHandler {
 		return false;
 	}
 	
+	public static void DisableBots() {
+		for(int i = 0; i < nanobots.size(); i++) {
+			nanobots.get(i).SetActivity(false);
+		}
+		System.out.println("Disabled!");
+	}
+	
+	public static void EnableBots() {
+		for(int i = 0; i < nanobots.size(); i++) {
+			nanobots.get(i).SetActivity(true);
+		}
+		System.out.println("Enabled!");
+	}
+	
 	public static void main(String[] args) {
 		GameHandler.InitializeGame(3);
-		GameHandler.nanobots.get(0).SetPosition(new Point2D.Double(80,50));
-		GameHandler.player.SetPosition(new Point2D.Double(1000,100));
-		GameHandler.GetNanoBots().get(0).Attack(new Point2D.Double(1000, 115));
+		GameHandler.nanobots.get(0).SetPosition(new Point2D.Double(150,20));
+		GameHandler.player.SetPosition(new Point2D.Double(80,100));
+		System.out.println(GameHandler.GetNanoBots().get(0));
+		GameHandler.GetNanoBots().get(0).Attack(new Point2D.Double(80, 100));
 	}
 }
